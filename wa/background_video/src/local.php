@@ -1,10 +1,9 @@
 <style>
     .youtube-background{
-        height: 100%; 
-        width: 100%; 
+        width: <?php echo $largura?>px; 
+        height: <?php echo $altura?>px;
         z-index: -9999999999999999999; 
         position: absolute; 
-        overflow: hidden; 
         inset: 0px; 
         pointer-events: none;          
         background-size: cover; 
@@ -17,11 +16,9 @@
         transform: translateX(-50%) translateY(-50%); 
         position: absolute; 
         opacity: 1; 
-        width: <?php echo $largura?>px; 
-        height: <?php echo $altura?>px;
     }
 </style>
 
 <video class="youtube-background" autoplay muted loop id="myVideo">
-  <source class="youtube-iframe" src="3.mp4" type="video/mp4">
+  <source class="youtube-iframe" src="<?php echo ConfigPainel('base_url').'wa/background_video/uploads/'.$id ?>" >
 </video>

@@ -1,8 +1,8 @@
-function BackgroundVideo(){
+function BackgroundVideo(a){
     $.ajax({
       type:    "GET",
       cache:   false,
-      url:     UrlPainel+'wa/background-video',
+      url:     UrlPainel+'wa/background_video/?id='+a,
       success: function (data) {
         jQuery('#BackgroundVideo').html(data);
       },
