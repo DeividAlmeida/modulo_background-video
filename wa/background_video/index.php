@@ -6,8 +6,7 @@ require_once('../../database/config.php');
 $db_id = $_GET['id'];
 $data = DBRead('background_video','*' ,"WHERE id = '{$db_id}'")[0];
 $id = $data['path'];
-$largura = $data['largura'];
-$altura= $data['altura'];
+$altura = $data['altura'];
 $path ="src/".$data['tipo'].".php";
 require_once($path);
 ?>

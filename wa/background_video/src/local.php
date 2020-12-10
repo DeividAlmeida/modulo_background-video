@@ -1,24 +1,23 @@
 <style>
-    .youtube-background{
-        width: <?php echo $largura?>px; 
-        height: <?php echo $altura?>px;
+    .background{
+        height: auto; 
+        width: 100%; 
         z-index: -9999999999999999999; 
         position: absolute; 
         inset: 0px; 
         pointer-events: none;          
         background-size: cover; 
-        background-repeat: no-repeat; 
         background-position: center center;
+        top: -<?php echo $altura ?>px;
     }
-    .youtube-iframe{
-        top: 50%; 
-        left: 50%; 
-        transform: translateX(-50%) translateY(-50%); 
+    .iframe{
         position: absolute; 
         opacity: 1; 
+        width: 100%; 
+        height: 100%; 
     }
 </style>
 
-<video class="youtube-background" autoplay muted loop id="myVideo">
-  <source class="youtube-iframe" src="<?php echo ConfigPainel('base_url').'wa/background_video/uploads/'.$id ?>" >
+<video class="background" autoplay muted loop id="myVideo">
+  <source class="iframe" src="<?php echo ConfigPainel('base_url').'wa/background_video/uploads/'.$id ?>" >
 </video>

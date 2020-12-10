@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `background_video` (
   `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(255) DEFAULT NULL,
   `tipo` varchar(255) DEFAULT NULL,
-  `largura` text DEFAULT NULL,
-  `altura` text DEFAULT NULL,
+  `altura` varchar(255) DEFAULT NULL,
+  `cumprimento` varchar(255) DEFAULT NULL,
   `path` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;

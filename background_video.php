@@ -13,7 +13,13 @@
 				</div>
 			</div>
 		</div>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <?php 
+        $modo = "produção";#dev
+        if($modo == "dev"){ ?>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <?php }else{ ?>
+                <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        <?php }?>
 	</header>
 
     <div class="container-fluid animatedParent animateOnce my-3">
@@ -52,7 +58,7 @@
 
                             <?php
                                 foreach ($Query as $dados) {
-                                    $CodSite  = '<div id="BackgroundVideo"></div>'."\n";
+                                    $CodSite  = '<div id="BackgroundVideo'.$dados['id'].'"></div>'."\n";
                                     $CodSite .= '<script type="text/javascript">BackgroundVideo('.$dados['id'].');</script>';
                                     $id = $dados['id'];
                                     $itens = DBRead('background_video','*',"WHERE id = '{$id}'")[0];

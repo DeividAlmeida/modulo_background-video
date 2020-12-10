@@ -2,6 +2,7 @@
 require_once('database/upload.class.php');
 if(!$_SESSION['node']['id']){ die(); exit(); }
 $id = $_GET['props'];
+$cumprimento = $_POST['cumprimento'];
 if($_POST['tipo'] == 'local'){
     if($_FILES['path']['name'] == null){
        $keep = DBRead('background_video','*' ,"WHERE id = '{$id}'")[0];
@@ -21,8 +22,8 @@ if(isset($_GET['props']) && $id == "0"){
       $data = array(
         'nome'           => post('nome'),
         'tipo'           => post('tipo'),
-        'largura'        => post('largura'),
         'altura'         => post('altura'),
+        'cumprimento'    => $cumprimento,
         'path'           => $path
       );
       $query = DBCreate('background_video', $data, true);
@@ -37,8 +38,8 @@ if(isset($_GET['props']) && $id == "0"){
     $data = array(
         'nome'           => post('nome'),
         'tipo'           => post('tipo'),
-        'largura'        => post('largura'),
         'altura'         => post('altura'),
+        'cumprimento'    => $cumprimento,
         'path'           => $path
       );
       $query =  DBUpdate('background_video', $data, "id = '{$id}'");
