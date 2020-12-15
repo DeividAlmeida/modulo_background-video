@@ -18,6 +18,6 @@
     }
 </style>
 
-<video class="background" autoplay muted loop id="myVideo">
+<video class="background" controls="true" playsinline autoplay muted loop id="myVideo">
   <source class="iframe" src="<?php echo ConfigPainel('base_url').'wa/background_video/uploads/'.$id ?>" >
 </video>
